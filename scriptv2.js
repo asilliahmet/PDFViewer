@@ -104,7 +104,7 @@ function aspectWidthHeight(aspect, width, height) {
 async function pageLoads() {
   console.log("loader online");
 
-  pdfFile = await getPDFFromUrl(location.origin + AAobj(settings,"filename"));
+  pdfFile = await getPDFFromUrl(location.href + AAobj(settings,"filename"));
 
   let scrollerWidth = document.querySelector("#contentWidth").offsetWidth;
 
