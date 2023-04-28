@@ -1,0 +1,16 @@
+#pdfApp {
+  overflow: hidden;
+}
+
+.pdfpage {
+  width: 100%;
+  border: 1px solid blue;
+  box-sizing: border-box;
+}
+
+#pdfscroller{
+  overflow-y: scroll;
+  overflow-x: hidden;
+  max-height: 80vh;
+  border: 1px solid red;
+}
