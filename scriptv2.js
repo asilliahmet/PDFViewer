@@ -50,6 +50,8 @@ let settings = [
   // this is an AAobject
 ];
 
+//PERSONAL LIBRARY STARTS HERE
+
 function AAobj(AAobject, para, edit){
   let AAindex = -1;
   for (let i = 0; i<AAobject.length; i++){
@@ -100,6 +102,8 @@ function aspectWidthHeight(aspect, width, height) {
   if (width == -1) return aspect*height;
   if (height == -1) return width/aspect;
 }
+
+//PERSONAL LIBRARY ENDS HERE
 
 async function pageLoads() {
   console.log("loader online");
