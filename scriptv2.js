@@ -110,6 +110,9 @@ async function pageLoads() {
 
   pdfFile = await getPDFFromUrl(location.href + AAobj(settings,"filename"));
 
+  console.log(location.href + AAobj(settings,"filename"));
+  console.log(pdfFile);
+
   let scrollerWidth = document.querySelector("#contentWidth").offsetWidth;
 
   PDFParams[AAobj(PDFParams,"count",1)][1] = pdfFile.numPages;
