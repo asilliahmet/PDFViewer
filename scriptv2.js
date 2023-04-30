@@ -32,6 +32,12 @@ function renderPageToCanvas (canvas, pdf, pageNumber, renderScale) {
 }
 // page renderer, no touchies
 
+function loadBase64Pdf(base64Pdf) {
+  return pdfjsLib.getDocument({ data: atob(base64Pdf) }).promise.then(function(pdf) {
+    return pdf;
+  });
+}
+// base64 to pdf, no touchies
 
 let pdfAppDiv = document.querySelector("#pdfApp");
 pdfAppDiv.innerHTML += `<div id="pdfscroller"><div style="margin: 0px; padding: 0px; width: 100%;" id="contentWidth"></div></div>`;
@@ -110,7 +116,10 @@ function aspectWidthHeight(aspect, width, height) {
 async function pageLoads() {
   console.log("loader online");
 
-  pdfFile = await getPDFFromUrl(location.href + AAobj(settings,"filename"));
+  // pdfFile = await getPDFFromUrl(location.href + AAobj(settings,"filename"));
+  // pdfFile = await getPDFFromUrl("http://majolikahali.com.tr/katalog/katalog.pdf");
+
+  pdfFile = await loadBase64Pdf(pdfData);
 
   console.log(location.href + AAobj(settings,"filename"));
   console.log(pdfFile);
